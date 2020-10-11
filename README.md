@@ -5,4 +5,4 @@ Minimalist checklist management app.
 
 Under development.
 
-[Live app](https://cocky-lamarr-785758.netlify.app/)
+[Live app](https://fertig.netlify.app/)
