@@ -12,5 +12,5 @@ window.onload = () => {
     const dark = e.target.checked
     document.documentElement.className = dark ? 'dark' : ''
     document.documentElement.style.backgroundColor = dark ? 'black' : 'white'
-  })
+  });
 }
