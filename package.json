@@ -7,16 +7,31 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build index.html",
     "start": "parcel index.html",
-    "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint": "standardx",
+    "lint:fix": "standardx --fix"
   },
   "keywords": [],
   "author": "Vojtech Kolencik",
   "license": "ISC",
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  },
+  "eslintConfig": {
+    "extends": ["standard", "standard-preact"],
+    "rules": {
+      "no-unused-vars": [0, { "varsIgnorePattern": "^(h|React)$" }]
+    }
+  },
   "devDependencies": {
+    "eslint-config-standard-preact": "^1.1.6",
     "parcel-bundler": "^1.12.4",
-    "standard": "^14.3.4",
+    "standardx": "^5.0.0",
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "preact": "^10.5.5"
   }
 }

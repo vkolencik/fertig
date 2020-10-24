@@ -6,31 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.0/dist/paper.min.css">
   <title>Morning checklist</title>
-  <!--suppress HtmlUnknownTarget -->
   <script src="src/index.js"></script>
 </head>
 <body>
 
-<div class="paper container">
-  <h1>Good morning! 🌞</h1>
-  <fieldset class="form-group">
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Check Outlook calendar schedule</span></label>
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Check Jira board</span></label>
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Check Gitlab deploys and MRs</span></label>
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Check personal Trello</span></label>
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Scan Slack </span></label>
-    <label class="paper-check"><input type="checkbox" class="task-check"/> <span>Scan email</span></label>
-  </fieldset>
+<div id="app"></div>
 
-  <fieldset class="form-group" style="position: absolute; right: 0; top: 10px;">
-    <label class="paper-switch-2">
-      <input id="darkswitch" type="checkbox"/>
-      <span class="paper-switch-slider round"></span>
-    </label>
-    <label for="darkswitch" class="paper-switch-2-label">
-      🦇
-    </label>
-  </fieldset>
-</div>
 </body>
 </html>
