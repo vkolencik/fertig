@@ -13,10 +13,18 @@
   "keywords": [],
   "author": "Vojtech Kolencik",
   "license": "ISC",
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "standard": "^14.3.4",
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "preact": "^10.5.5"
   }
 }
