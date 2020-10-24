@@ -18,15 +18,14 @@ const checklistData = {
 }
 
 const App = () => {
-  useEffect(() => {document.title = checklistData.title})
+  useEffect(() => { document.title = checklistData.title })
 
   return (
-    <div class="paper container">
-      <Checklist checklistData={checklistData}/>
-      <DarkModeSwitch/>
+    <div class='paper container'>
+      <Checklist checklistData={checklistData} />
+      <DarkModeSwitch />
     </div>
   )
 }
 
 export default App
-

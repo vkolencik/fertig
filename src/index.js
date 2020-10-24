@@ -1,9 +1,9 @@
 // noinspection ES6UnusedImports
-import React, { h, render } from 'preact';
-import App from './App';
+import React, { h, render } from 'preact'
+import App from './App'
 
 window.onload = () => {
-  render(<App />, document.getElementById('app'));
+  render(<App />, document.getElementById('app'))
 
   window.addEventListener('beforeunload', function (e) {
     if (Array.from(document.querySelectorAll('input.task-check'))
