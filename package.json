@@ -19,9 +19,17 @@
     "react-dom": "preact/compat"
   },
   "eslintConfig": {
-    "extends": ["standard", "standard-preact"],
+    "extends": [
+      "standard",
+      "standard-preact"
+    ],
     "rules": {
-      "no-unused-vars": [0, { "varsIgnorePattern": "^(h|React)$" }]
+      "no-unused-vars": [
+        0,
+        {
+          "varsIgnorePattern": "^(h|React)$"
+        }
+      ]
     }
   },
   "devDependencies": {
