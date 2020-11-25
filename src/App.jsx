@@ -1,10 +1,11 @@
+/* global localStorage */
 // noinspection ES6UnusedImports
 import React, { h } from 'preact'
 import { useEffect } from 'preact/hooks'
 import { Checklist } from './Checklist'
 import { DarkModeSwitch } from './DarkModeSwitch'
 
-let storedChecklists = localStorage.getItem('checklists')
+const storedChecklists = localStorage.getItem('checklists')
 let checklistsData
 if (storedChecklists) {
   checklistsData = JSON.parse(storedChecklists)
