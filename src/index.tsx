@@ -1,10 +1,12 @@
 import { render } from 'preact';
 import { LocationProvider, Router, Route } from 'preact-iso';
 
-import { Header } from './components/Header.jsx';
-import { Home } from './pages/Home/index.jsx';
-import { NotFound } from './pages/_404.jsx';
+import { Header } from './Header.jsx';
 import './style.css';
+import React from "react";
+import ChecklistPage from "./ChecklistPage";
+
+const NotFound: React.FC = () => <div>Not found</div>
 
 export function App() {
 	return (
@@ -12,7 +14,7 @@ export function App() {
 			<Header />
 			<main>
 				<Router>
-					<Route path="/" component={Home} />
+					<Route path="/" component={ChecklistPage} />
 					<Route default component={NotFound} />
 				</Router>
 			</main>
@@ -23,9 +25,10 @@ export function App() {
 render(<App />, document.getElementById('app'));
 
 window.addEventListener('beforeunload', function (e) {
-	if (Array.from(document.querySelectorAll('input.task-check'))
-		.filter(elm => !elm.checked)
-		.length > 0) {
+	let incompleteTasks = Array.from(document.querySelectorAll('input.task-check'))
+		.filter(elm => !elm.checked);
+	
+	if (incompleteTasks.length > 0) {
 		e.preventDefault()
 		e.returnValue = ''
 	}
