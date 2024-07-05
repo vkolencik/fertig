@@ -1,13 +1,11 @@
-/* global localStorage */
-// noinspection ES6UnusedImports
-import React, { h } from 'preact'
 import { useEffect } from 'preact/hooks'
 import { Checklist } from './Checklist'
 import { DarkModeSwitch } from './DarkModeSwitch'
+import React from 'react'
 
 const storedChecklists = localStorage.getItem('checklists')
 let checklistsData
-if (storedChecklists) {
+if (storedChecklists !== null) {
   checklistsData = JSON.parse(storedChecklists)
 } else {
   checklistsData = [{
@@ -25,7 +23,7 @@ if (storedChecklists) {
   }]
 }
 
-const App = () => {
+const ChecklistPage: React.FC = () => {
   useEffect(() => { document.title = checklistsData[0].title })
 
   return (
@@ -36,4 +34,4 @@ const App = () => {
   )
 }
 
-export default App
+export default ChecklistPage
