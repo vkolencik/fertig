@@ -1,7 +1,6 @@
-// noinspection ES6UnusedImports
-import React, { h } from 'preact'
+import React from 'react'
 
-export const DarkModeSwitch = () =>
+export const DarkModeSwitch: React.FC = () =>
   <fieldset class='form-group' style='position: absolute; right: 0; top: 10px;'>
     <label class='paper-switch-2'>
       <input id='darkswitch' type='checkbox' />
