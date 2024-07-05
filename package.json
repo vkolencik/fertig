@@ -5,6 +5,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
+		"lint": "ts-standard",
 		"lint:fix": "ts-standard --fix"
 	},
 	"dependencies": {
