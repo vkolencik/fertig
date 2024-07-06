@@ -4,13 +4,13 @@ const morningChecklist = {
     name: 'Morning checklist',
     heading: 'Good morning! 🌞',
     tasks: [
-        {description: 'Check Outlook calendar schedule'},
-        {description: 'Check Gitlab deploys and MRs'},
-        {description: 'Check Jira board'},
-        {description: 'Check personal Trello'},
-        {description: 'Scan Slack'},
-        {description: 'Scan email'},
-        {description: 'Organize OneNote quick notes'}
+        {description: 'Check calendar schedule'},
+        {description: 'Check MRs and deploys'},
+        {description: 'Check board'},
+        {description: 'Check personal tasks'},
+        {description: 'Emergency scan Slack'},
+        {description: 'Emergency scan email'},
+        {description: 'Organize quick notes'}
     ]
 };
 
