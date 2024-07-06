@@ -1,12 +1,15 @@
 import { render } from 'preact'
-import { LocationProvider, Router, Route } from 'preact-iso'
+import { LocationProvider, Route, Router } from 'preact-iso'
 
 import { Header } from './Header.jsx'
 import './style.css'
 import React from 'react'
 import ChecklistPage from './ChecklistPage'
+import { ChecklistListPage } from './ChecklistListPage'
 
 const NotFound: React.FC = () => <div>Not found</div>
+
+const CreateChecklist: React.FC = () => <>TODO</>
 
 export const App: React.FC = () => {
   return (
@@ -14,7 +17,9 @@ export const App: React.FC = () => {
       <Header />
       <main>
         <Router>
-          <Route path='/' component={ChecklistPage} />
+          <Route path='/' component={ChecklistListPage} />
+          <Route path='/new-checklist' component={CreateChecklist} />
+          <Route path='/checklist/:checklistId' component={ChecklistPage} />
           <Route default component={NotFound} />
         </Router>
       </main>
@@ -22,7 +27,12 @@ export const App: React.FC = () => {
   )
 }
 
-render(<App />, document.getElementById('app'))
+const appElement = document.getElementById('app')
+if (appElement === null) {
+  throw Error('Cannot find app element')
+}
+
+render(<App />, appElement)
 
 window.addEventListener('beforeunload', function (e) {
   const incompleteTasks = Array.from(document.querySelectorAll('input.task-check'))
