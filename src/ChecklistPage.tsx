@@ -1,34 +1,23 @@
-import { useEffect } from 'preact/hooks'
-import { Checklist } from './Checklist'
-import { DarkModeSwitch } from './DarkModeSwitch'
+import {useEffect} from 'preact/hooks'
+import {Checklist} from './Checklist'
+import {DarkModeSwitch} from './DarkModeSwitch'
 import React from 'react'
-
-const storedChecklists = localStorage.getItem('checklists')
-let checklistsData
-if (storedChecklists !== null) {
-  checklistsData = JSON.parse(storedChecklists)
-} else {
-  checklistsData = [{
-    title: 'Morning checklist',
-    heading: 'Good morning! 🌞',
-    tasks: [
-      { description: 'Check Outlook calendar schedule' },
-      { description: 'Check Gitlab deploys and MRs' },
-      { description: 'Check Jira board' },
-      { description: 'Check personal Trello' },
-      { description: 'Scan Slack' },
-      { description: 'Scan email' },
-      { description: 'Organize OneNote quick notes' }
-    ]
-  }]
-}
+import {useRoute} from "preact-iso";
+import {getChecklist} from "./GetChecklist";
 
 const ChecklistPage: React.FC = () => {
-  useEffect(() => { document.title = checklistsData[0].title })
+  const {checklistId} = useRoute().params;
+  const checklist = getChecklist(checklistId)
+
+  if (checklist === null) {
+    return (<div>Not found</div>)
+  }
+    
+  useEffect(() => { document.title = checklist.name })
 
   return (
     <div class='paper container'>
-      <Checklist checklistData={checklistsData[0]} />
+      <Checklist checklistData={checklist} />
       <DarkModeSwitch />
     </div>
   )
