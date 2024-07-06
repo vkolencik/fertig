@@ -34,16 +34,6 @@ if (appElement === null) {
 
 render(<App />, appElement)
 
-window.addEventListener('beforeunload', function (e) {
-  const incompleteTasks = Array.from(document.querySelectorAll('input.task-check'))
-    .filter(elm => !(elm as HTMLInputElement).checked)
-
-  if (incompleteTasks.length > 0) {
-    e.preventDefault()
-    e.returnValue = ''
-  }
-})
-
 document.querySelector('#darkswitch')?.addEventListener('change', (e) => {
   const dark = (e.target as HTMLInputElement).checked
   document.documentElement.className = dark ? 'dark' : ''

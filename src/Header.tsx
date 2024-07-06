@@ -7,9 +7,7 @@ export const Header: React.FC = () => {
   return (
     <header>
       <nav>
-        <a href='/' class={url === '/' ? 'active' : ''}>
-          Home
-        </a>
+        {/*<a href="/" class={url === '/' ? 'active' : ''}>Home</a>*/}
       </nav>
     </header>
   )

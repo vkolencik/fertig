@@ -1,24 +1,29 @@
 import { useEffect } from 'preact/hooks'
-import { Checklist } from './Checklist'
+import { ChecklistView } from './ChecklistView'
 import { DarkModeSwitch } from './DarkModeSwitch'
 import React from 'react'
 import { useRoute } from 'preact-iso'
 import { getChecklist } from './GetChecklist'
+import { setChecklistPending, unsetChecklistPending } from './unloadWatcher'
 
 const ChecklistPage: React.FC = () => {
   const { checklistId } = useRoute().params
   const checklist = getChecklist(checklistId)
 
   if (checklist === null) {
-    return (<div>Not found</div>)
+    throw Error(`Checklist ${checklistId} not found`)
   }
 
-  useEffect(() => { document.title = checklist.name })
+  useEffect(() => { document.title = checklist.name }, [])
+  useEffect(() => {
+    setChecklistPending()
+    return () => { unsetChecklistPending() }
+  }, [])
 
   return (
-    <div class='paper container'>
-      <Checklist checklistData={checklist} />
-      <DarkModeSwitch />
+    <div class="paper container">
+      <ChecklistView checklistData={checklist}/>
+      <DarkModeSwitch/>
     </div>
   )
 }
