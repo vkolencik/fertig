@@ -1,11 +1,11 @@
-import {render} from 'preact'
-import {LocationProvider, Route, Router} from 'preact-iso'
+import { render } from 'preact'
+import { LocationProvider, Route, Router } from 'preact-iso'
 
-import {Header} from './Header.jsx'
+import { Header } from './Header.jsx'
 import './style.css'
 import React from 'react'
 import ChecklistPage from './ChecklistPage'
-import {ChecklistListPage} from "./ChecklistListPage";
+import { ChecklistListPage } from './ChecklistListPage'
 
 const NotFound: React.FC = () => <div>Not found</div>
 
@@ -27,7 +27,7 @@ export const App: React.FC = () => {
   )
 }
 
-const appElement = document.getElementById('app');
+const appElement = document.getElementById('app')
 if (appElement === null) {
   throw Error('Cannot find app element')
 }
