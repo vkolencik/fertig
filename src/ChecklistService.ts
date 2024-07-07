@@ -1,8 +1,9 @@
+import { Checklist } from './Checklist'
 
 const morningChecklist = {
   id: 'morning-checklist',
   name: 'Morning checklist',
-  heading: 'Good morning! 🌞',
+  description: 'Good morning! 🌞',
   tasks: [
     { description: 'Check calendar schedule' },
     { description: 'Check MRs and deploys' },
@@ -18,13 +19,6 @@ const storedChecklists = localStorage.getItem('checklists')
 const checklistsData: { [key: string]: Checklist } | null = storedChecklists !== null ? JSON.parse(storedChecklists) : null
 // TODO: handle schema mismatch
 
-export interface Checklist {
-  id: string
-  name: string
-  heading: string
-  tasks: Array<{ description: string }>
-}
-
 export function getChecklist (checklistId: string): Checklist | null {
   if (checklistId === morningChecklist.id) {
     return morningChecklist
@@ -38,3 +32,8 @@ export function getChecklist (checklistId: string): Checklist | null {
 }
 
 export const getChecklists: () => Checklist[] = () => checklistsData == null ? [morningChecklist] : [...Object.values(checklistsData), morningChecklist]
+
+export const saveChecklist: (checklist: Checklist) => void = (checklist: Checklist) => {
+  const newChecklistsData = { ...checklistsData, [checklist.id]: checklist }
+  localStorage.setItem('checklists', JSON.stringify(newChecklistsData))
+}

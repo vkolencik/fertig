@@ -6,10 +6,9 @@ import './style.css'
 import React from 'react'
 import ChecklistPage from './ChecklistPage'
 import { ChecklistListPage } from './ChecklistListPage'
+import { CreateChecklist } from './CreateChecklist'
 
 const NotFound: React.FC = () => <div>Not found</div>
-
-const CreateChecklist: React.FC = () => <>TODO</>
 
 export const App: React.FC = () => {
   return (
