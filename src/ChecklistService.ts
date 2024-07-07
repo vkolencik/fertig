@@ -6,9 +6,9 @@ const getStoredChecklistData: () => { [key: string]: Checklist } | null = () => 
   const storedChecklists = localStorage.getItem(checklistsKey)
   const checklistsData: { [key: string]: Checklist } | null = storedChecklists !== null ? JSON.parse(storedChecklists) : null
 
-// TODO: handle schema mismatch
+  // TODO: handle schema mismatch
   return checklistsData
-} 
+}
 
 export function getChecklist (checklistId: string): Checklist | null {
   const storedChecklists = getStoredChecklistData()
@@ -30,7 +30,7 @@ export const getChecklists: () => Checklist[] = () => {
 
 export const saveChecklist: (checklist: Checklist) => void = (checklist: Checklist) => {
   const storedChecklists = getStoredChecklistData()
-  
+
   const newChecklistsData = { ...storedChecklists, [checklist.id]: checklist }
   localStorage.setItem(checklistsKey, JSON.stringify(newChecklistsData))
 }
