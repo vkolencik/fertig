@@ -2,7 +2,7 @@ import { useEffect } from 'preact/hooks'
 import { ChecklistView } from './ChecklistView'
 import React from 'react'
 import { useRoute } from 'preact-iso'
-import { getChecklist } from './GetChecklist'
+import { getChecklist } from './ChecklistService'
 import { setChecklistPending, unsetChecklistPending } from './unloadWatcher'
 
 const ChecklistPage: React.FC = () => {

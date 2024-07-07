@@ -1,5 +1,5 @@
 import React from 'react'
-import { getChecklists } from './GetChecklist'
+import { getChecklists } from './ChecklistService'
 
 export const ChecklistListPage: React.FC = () => (
   <>
