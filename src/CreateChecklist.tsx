@@ -1,8 +1,23 @@
 import React from 'react'
 import { useState } from 'preact/hooks'
-import { Task } from './Checklist'
+import { Checklist, Task } from './Checklist'
 import { saveChecklist } from './ChecklistService'
 import { useLocation } from 'preact-iso'
+
+const morningChecklist: Checklist = {
+  id: 'morning-checklist',
+  name: 'Morning checklist',
+  description: 'Good morning! 🌞',
+  tasks: [
+    { description: 'Check calendar schedule' },
+    { description: 'Check MRs and deploys' },
+    { description: 'Check board' },
+    { description: 'Check personal tasks' },
+    { description: 'Emergency scan Slack' },
+    { description: 'Emergency scan email' },
+    { description: 'Organize quick notes' }
+  ]
+}
 
 function getUrlSlug (name: string) {
   return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
