@@ -7,11 +7,11 @@ export const Header: React.FC = () => {
 
   return (
     <header>
-      <div className="row flex-edges">
-        <div className="sm-4 col">
-          <nav><a href="/" class={url === '/' ? 'active' : ''}>Home</a></nav>
+      <div className='row flex-edges'>
+        <div className='sm-4 col'>
+          <nav><a href='/' class={url === '/' ? 'active' : ''}>Home</a></nav>
         </div>
-        <div className="col"><DarkModeSwitch/></div>
+        <div className='col'><DarkModeSwitch /></div>
       </div>
     </header>
   )

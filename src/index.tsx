@@ -13,15 +13,15 @@ const CreateChecklist: React.FC = () => <>TODO</>
 
 export const App: React.FC = () => {
   return (
-    <div className="paper container">
+    <div className='paper container'>
       <LocationProvider>
-        <Header/>
+        <Header />
         <main>
           <Router>
-            <Route path="/" component={ChecklistListPage}/>
-            <Route path="/new-checklist" component={CreateChecklist}/>
-            <Route path="/checklist/:checklistId" component={ChecklistPage}/>
-            <Route default component={NotFound}/>
+            <Route path='/' component={ChecklistListPage} />
+            <Route path='/new-checklist' component={CreateChecklist} />
+            <Route path='/checklist/:checklistId' component={ChecklistPage} />
+            <Route default component={NotFound} />
           </Router>
         </main>
       </LocationProvider>
@@ -34,7 +34,7 @@ if (appElement === null) {
   throw Error('Cannot find app element')
 }
 
-render(<App/>, appElement)
+render(<App />, appElement)
 
 document.querySelector('#darkswitch')?.addEventListener('change', (e) => {
   const dark = (e.target as HTMLInputElement).checked

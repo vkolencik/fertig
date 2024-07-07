@@ -20,8 +20,8 @@ const ChecklistPage: React.FC = () => {
   }, [])
 
   return (
-    <div class="paper container">
-      <ChecklistView checklistData={checklist}/>
+    <div class='paper container'>
+      <ChecklistView checklistData={checklist} />
     </div>
   )
 }
