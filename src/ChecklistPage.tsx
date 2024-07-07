@@ -1,6 +1,5 @@
 import { useEffect } from 'preact/hooks'
 import { ChecklistView } from './ChecklistView'
-import { DarkModeSwitch } from './DarkModeSwitch'
 import React from 'react'
 import { useRoute } from 'preact-iso'
 import { getChecklist } from './GetChecklist'
@@ -23,7 +22,6 @@ const ChecklistPage: React.FC = () => {
   return (
     <div class="paper container">
       <ChecklistView checklistData={checklist}/>
-      <DarkModeSwitch/>
     </div>
   )
 }
